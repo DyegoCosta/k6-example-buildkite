@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  k6:
+    image: loadimpact/k6
+    environment:
+      BASE_URL: $BASE_URL
+      TEST_RUN_ID: $TEST_RUN_ID
+      AUTH_TOKEN: $AUTH_TOKEN
+      MAX_VIRTUAL_USERS: $MAX_VIRTUAL_USERS
+      VIRTUAL_USERS_RAMP_UP_DURATION: $VIRTUAL_USERS_RAMP_UP_DURATION
+      VIRTUAL_USERS_SUSTAINED_DURATION: $VIRTUAL_USERS_SUSTAINED_DURATION
+      VIRTUAL_USERS_RAMP_DOWN_DURATION: $VIRTUAL_USERS_RAMP_DOWN_DURATION
+    command: 'run --tag test_run_id=$TEST_RUN_ID /k6/runTests.js'
+    volumes:
+      - ./:/k6:cached
