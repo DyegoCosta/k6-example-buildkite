@@ -5,10 +5,11 @@ steps:
     fields:
       - text: 'Base URL'
         key: 'base-url'
-        hint: 'On a real pipeline you probably want this set up elsewhere'
+        hint: 'On a real pipeline you probably want this set up elsewhere. Example: https://example.com'
       - text: 'API Auth Token'
         key: 'auth-token'
-        hint: 'Add your Bare token here if your API requires it'
+        hint: 'Add your Bare token here if your API requires it. Single use token is recommended.'
+        required: false
       - text: 'Concurrent IPs'
         key: 'concurrent-ips'
         hint: 'Number of unique IPs that the virtual users will be spread across'
