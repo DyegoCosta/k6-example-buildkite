@@ -5,7 +5,7 @@ set -euo pipefail
 BUILDKITE_PARALLELISM=$(buildkite-agent meta-data get buildkite-parallelism)
 BASE_URL=$(buildkite-agent meta-data get base-url)
 MAX_VIRTUAL_USERS=$(buildkite-agent meta-data get max-virtual-users)
-AUTH_TOKEN=$(buildkite-agent meta-data get auth-token)
+AUTH_TOKEN=$(buildkite-agent meta-data get auth-token --default "")
 VIRTUAL_USERS_RAMP_UP_DURATION=$(buildkite-agent meta-data get virtual-users-ramp-up-duration)
 VIRTUAL_USERS_SUSTAINED_DURATION=$(buildkite-agent meta-data get virtual-users-sustained-duration)
 VIRTUAL_USERS_RAMP_DOWN_DURATION=$(buildkite-agent meta-data get virtual-users-ramp-down-duration)
