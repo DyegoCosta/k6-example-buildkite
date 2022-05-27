@@ -10,6 +10,6 @@ services:
       VIRTUAL_USERS_RAMP_UP_DURATION: $VIRTUAL_USERS_RAMP_UP_DURATION
       VIRTUAL_USERS_SUSTAINED_DURATION: $VIRTUAL_USERS_SUSTAINED_DURATION
       VIRTUAL_USERS_RAMP_DOWN_DURATION: $VIRTUAL_USERS_RAMP_DOWN_DURATION
-    command: 'run --tag test_run_id=$TEST_RUN_ID /k6/runTests.js'
+    command: 'run --tag test_run_id=${TEST_RUN_ID:-local} /k6/runTests.js'
     volumes:
       - ./:/k6:cached
