@@ -1,5 +1,8 @@
 # Used by the 'Add to Buildkite' button in the README
-name: "k6 Example"
+name: ":k6: Load Test with k6"
+description: "Example pipeline setup to run k6 tests on Buildkite"
 steps:
   - label: ":pipeline:"
     command: "buildkite-agent pipeline upload"
+    agents:
+      - queue=${QUEUE:-default}
