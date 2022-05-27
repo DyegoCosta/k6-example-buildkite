@@ -16,7 +16,7 @@ let max_virtual_users_per_ip=x/y
 
 echo "
   - label: ':k6: Load Test %n'
-    command: docker-compose up
+    command: docker-compose up --exit-code-from k6 --abort-on-container-exit
     timeout_in_minutes: 120
     parallelism: \"${CONCURRENT_IPS}\"
     env:
