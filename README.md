@@ -23,6 +23,6 @@ Once the pipeline is installed on your Buildkite account (via the "Add to Buildk
 
 ## Running Locally
 
-```
+```shell
 BASE_URL=https://example.com docker-compose up
 ```
